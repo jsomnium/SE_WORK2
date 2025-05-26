@@ -9,6 +9,7 @@
 class Logout {
 public:
 	void LogoutSystem(User& currentUser);
+	string GetCurUserId(User& currentUser);
 };
 
 #endif

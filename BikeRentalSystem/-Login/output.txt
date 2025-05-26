@@ -4,8 +4,12 @@
 > jew jewpsdsdw 203128034
 2.1. 로그인
 > jisu jisupw 
+2.2. 로그아웃
+> jisu
 2.1. 로그인
 > admin admin 
+2.2. 로그아웃
+> admin
 1.1. 회원가입
 > test test 1111
 6.1. 종료

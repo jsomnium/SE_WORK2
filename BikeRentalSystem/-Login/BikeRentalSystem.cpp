@@ -79,10 +79,14 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
                 LogoutUI LogoutUI(&LogoutControl);
                 string id;
 
+                // [컨트롤] id 가져오기
+                id = LogoutControl.GetCurUserId(currentUser);
+
                 // [컨트롤] 로직 실행
                 LogoutControl.LogoutSystem(currentUser);
 
                 // [바운더리] 출력
+                LogoutUI.OutputLogoutResult(id, out_fp);
                 break;
             }
             }

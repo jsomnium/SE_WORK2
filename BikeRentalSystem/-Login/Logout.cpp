@@ -6,3 +6,8 @@ void Logout::LogoutSystem(User& currentUser)
 {
 	currentUser = User(); // 기본 생성자로 리셋
 }
+
+string Logout::GetCurUserId(User& currentUser)
+{
+	return currentUser.GetID();
+}
