@@ -8,8 +8,8 @@
 // 로그아웃 컨트롤 정의
 class Logout {
 public:
-	void LogoutSystem(User& currentUser);
-	string GetCurUserId(User& currentUser);
+	void LogoutSystem(User currentUser);
+	string GetCurUserId(User currentUser);
 };
 
 #endif

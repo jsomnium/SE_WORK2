@@ -12,6 +12,7 @@ private:
 public:
 	void AddNewMember(Member* member);
 	bool IsRealMember(string& id, string& pw);
+	Member* FindMember(string id, string pw);
 };
 
 #endif

@@ -1,4 +1,5 @@
 #include "MemberRepo.h"
+#include "Member.h"
 
 void MemberRepo::AddNewMember(Member* member)
 {
@@ -14,4 +15,14 @@ bool MemberRepo::IsRealMember(string& id, string& pw)
         }
     }
     return false;
+}
+
+Member* MemberRepo::FindMember(string id, string pw)
+{
+    for (auto& member : members) {
+        if (member->GetID() == id && member->GetPw() == pw) {
+            return member;
+        }
+    }
+    return nullptr;
 }

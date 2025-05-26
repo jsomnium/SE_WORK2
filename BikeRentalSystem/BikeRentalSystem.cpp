@@ -14,6 +14,8 @@
 #include "Admin.h"
 #include "RentalInfo.h"
 #include "RentalInfoUI.h"
+#include "Exit.h"
+#include "ExitUI.h"
 
 void doTask(ifstream& in_fp, ofstream& out_fp)
 {
@@ -54,7 +56,6 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
                 // [바운더리] 출력
                 JoinUI.OutputJoinResult(id, pw, phone, out_fp);
 
-                // 수행 종료
                 break;
             }
             }
@@ -80,7 +81,6 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
                 // [바운더리] 출력
                 LoginUI.OutputLoginResult(id, pw, out_fp);
 
-                // 수행 종료
                 break;
             }
             case 2: // "2.2 로그아웃" 메뉴 부분
@@ -99,7 +99,6 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
                 // [바운더리] 출력
                 LogoutUI.OutputLogoutResult(id, out_fp);
 
-                // 수행 종료
                 break;
             }
             }
@@ -125,7 +124,6 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
                 // [바운더리] 출력
                 EnrollBikeUI.OutputEnrollInfo(id, name, out_fp);
 
-                // 수행 종료
                 break;
             }
             }
@@ -151,7 +149,6 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
                 // [바운더리] 출력
                 RentUI.OutputRentInfo(id, name, out_fp);
 
-                // 수행 종료
                 break;
             }
             }
@@ -171,10 +168,9 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
                 // [컨트롤] 자전거 가져오기
                 bikes = RentalInfoControl.GetRentedBikes(currentUser);
 
-                // [바운더리]
+                // [바운더리] 출력
                 RentalInfoUI.OutputRentedBikeList(bikes, out_fp);
 
-                // 수행 종료
                 break;;
             }
             }
@@ -185,10 +181,17 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
             switch (menu_level_2)
             {
             case 1:   // "6.1. 종료" 메뉴 부분
-                // 이 부분 또한 use_case로 간주해서 구현한다.
             {
-                out_fp << "6.1. 종료" << endl;
-                is_program_exit = 1;
+                // 필요한 클래스 생성
+                Exit ExitControl;
+                ExitUI ExitUI(&ExitControl);
+                
+                // [컨트롤] 로직 수행
+                ExitControl.ExitSystem(is_program_exit);
+
+                // [바운더리] 출력
+                ExitUI.OutputExit(out_fp);
+
                 break;;
             }
             }
