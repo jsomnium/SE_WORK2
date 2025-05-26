@@ -13,5 +13,6 @@ void Login::LoginSystem(string& id, string& pw, User& currentUser)
 	if (memberRepo->IsRealMember(id, pw))
 	{
 		currentUser = User(id, pw);
+		// 로그인 정보 저장
 	}
 }

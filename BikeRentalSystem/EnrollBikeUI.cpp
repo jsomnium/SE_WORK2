@@ -10,5 +10,5 @@ void EnrollBikeUI::InputEnrollInfo(string& id, string& name, ifstream& in_fp)
 void EnrollBikeUI::OutputEnrollInfo(string& id, string& name, ofstream& out_fp)
 {
 	out_fp << "3.1. 자전거 등록" << endl;
-	out_fp << "> " << id << " " << name << " " << endl;
+	out_fp << "> " << id << " " << name << " " << endl << endl;
 }

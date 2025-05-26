@@ -11,6 +11,7 @@ private:
 	vector<Bike*> bikes;
 public:
 	void EnrollNewBike(Bike* bike);
+	Bike* FindBike(string& id);
 };
 
 #endif

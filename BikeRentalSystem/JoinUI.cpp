@@ -11,5 +11,5 @@ void JoinUI::InputJoinInfo(string& id, string& pw, string& phoneNum, ifstream& i
 // 출력하는 로직
 void JoinUI::OutputJoinResult(string& id, string& pw, string& phoneNum, ofstream& out_fp) {
     out_fp << "1.1. 회원가입" << endl;
-    out_fp << "> " << id << " " << pw << " " << phoneNum << endl;
+    out_fp << "> " << id << " " << pw << " " << phoneNum << endl << endl;
 }

@@ -1,9 +1,10 @@
-1 1 jisu jisupw 1234
-1 1 jew jewpsdsdw 203128034
-2 1 jisu jisupw
-2 2
 2 1 admin admin
-3 1 bikeId1 bikeName1
-3 1 bikeId2 bikeName2
+3 1 b1 bikeMaker 
+3 1 b2 bikeProducer
 2 2
+1 1 kim pwdpwd 01011111111
+2 1 kim pwdpwd
+4 1 b2
+4 1 b1
+5 1
 6 1

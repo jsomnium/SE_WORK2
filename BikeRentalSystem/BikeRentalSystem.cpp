@@ -9,12 +9,15 @@
 #include "BikeRepo.h"
 #include "EnrollBike.h"
 #include "EnrollBikeUI.h"
+#include "Rent.h"
+#include "RentUI.h"
+#include "Admin.h"
 
 void doTask(ifstream& in_fp, ofstream& out_fp)
 {
     // 기능을 수행하기 위해 필요한 클래스 생성
     MemberRepo memberRepo;// 모든 멤버 정보 저장
-    User currentUser; // 현재 로그인한 유저 정보 저장
+    Member currentUser; // 현재 로그인한 멤버 정보 저장
     BikeRepo bikeRepo; // 모든 자전거 정보 저장
 
     // 메뉴 파싱을 위한 level 구분을 위한 변수
@@ -122,6 +125,53 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
 
                 // 수행 종료
                 break;
+            }
+            }
+            break;
+        }
+        case 4:
+        {
+            switch (menu_level_2)
+            {
+            case 1:  // "4.1 자전거 대여" 메뉴 부분
+            {
+                // 필요한 클래스 생성
+                Rent RentControl;
+                RentUI RentUI(&RentControl);
+                string id, name;
+                //Bike bike;
+
+                // [바운더리] 입력받기
+                RentUI.InputRentInfo(id, in_fp);
+
+                // [컨트롤] 로직 수행
+                RentControl.RentBike(id, name, currentUser, bikeRepo);
+
+                // [바운더리] 출력
+                RentUI.OutputRentInfo(id, name, out_fp);
+
+                // 수행 종료
+                break;
+            }
+            }
+            break;
+        }
+        case 5:
+        {
+            switch (menu_level_2)
+            {
+            case 1:   // "5.1. 자전거 대여 리스트" 메뉴 부분
+            {
+                // 필요한 클래스 생성
+
+                // [바운더리]
+
+                // [컨트롤]
+
+                // [바운더리]
+
+                // 수행 종료
+                break;;
             }
             }
             break;
