@@ -6,12 +6,16 @@
 #include "LoginUI.h"
 #include "Logout.h"
 #include "LogoutUI.h"
+#include "BikeRepo.h"
+#include "EnrollBike.h"
+#include "EnrollBikeUI.h"
 
 void doTask(ifstream& in_fp, ofstream& out_fp)
 {
-    // 기능을 수행하기 위한 컨트롤, 바운더리, 콜렉션 클래스 생성
-    MemberRepo memberRepo;
+    // 기능을 수행하기 위해 필요한 클래스 생성
+    MemberRepo memberRepo;// 모든 멤버 정보 저장
     User currentUser; // 현재 로그인한 유저 정보 저장
+    BikeRepo bikeRepo; // 모든 자전거 정보 저장
 
     // 메뉴 파싱을 위한 level 구분을 위한 변수
     int menu_level_1 = 0, menu_level_2 = 0;
@@ -70,6 +74,8 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
 
                 // [바운더리] 출력
                 LoginUI.OutputLoginResult(id, pw, out_fp);
+
+                // 수행 종료
                 break;
             }
             case 2: // "2.2 로그아웃" 메뉴 부분
@@ -87,6 +93,34 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
 
                 // [바운더리] 출력
                 LogoutUI.OutputLogoutResult(id, out_fp);
+
+                // 수행 종료
+                break;
+            }
+            }
+            break;
+        }
+        case 3:
+        {
+            switch (menu_level_2)
+            {
+            case 1: // "3.1 자전거 등록" 메뉴 부분
+            {
+                // 필요한 클래스 생성
+                EnrollBike EnrollBikeControl(&bikeRepo);
+                EnrollBikeUI EnrollBikeUI(&EnrollBikeControl);
+                string id, name;
+
+                // [바운더리] 입력받기
+                EnrollBikeUI.InputEnrollInfo(id, name, in_fp);
+
+                // [컨트롤] 로직 수행
+                EnrollBikeControl.EnrollNewBike(id, name);
+
+                // [바운더리] 출력
+                EnrollBikeUI.OutputEnrollInfo(id, name, out_fp);
+
+                // 수행 종료
                 break;
             }
             }

@@ -10,5 +10,4 @@ void LoginUI::OutputLoginResult(string& id, string& pw, ofstream& out_fp)
 {
 	out_fp << "2.1. ·Î±×ÀÎ" << endl;
 	out_fp << "> " << id << " " << pw << " " << endl;
-
 }

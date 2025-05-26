@@ -9,7 +9,7 @@ class Login {
 private:
 	MemberRepo* memberRepo;
 public:
-	Login(MemberRepo* memberRepo) : memberRepo(memberRepo) {};
+	Login(MemberRepo* memberRepo) : memberRepo(memberRepo) {}; // »ý¼ºÀÚ
 	void LoginSystem(string& id, string& pw, User& curretUser);
 };
 
