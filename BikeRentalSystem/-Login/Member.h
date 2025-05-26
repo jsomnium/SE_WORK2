@@ -11,8 +11,6 @@ private:
 	string phoneNum;
 public:
 	Member(string id, string pw, string phoneNum); // 생성자 정의
-	string GetMemberID();
-	string GetMemberPw();
 };
 
 #endif

@@ -5,6 +5,7 @@
 #include "Login.h"
 #include "LoginUI.h"
 #include "Logout.h"
+#include "LogoutUI.h"
 
 void doTask(ifstream& in_fp, ofstream& out_fp)
 {
@@ -73,7 +74,15 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
             }
             case 2: // "2.2 로그아웃" 메뉴 부분
             {
-                // Logout LogoutControl(currentUser);
+                // 필요한 클래스 생성
+                Logout LogoutControl;
+                LogoutUI LogoutUI(&LogoutControl);
+                string id;
+
+                // [컨트롤] 로직 실행
+                LogoutControl.LogoutSystem(currentUser);
+
+                // [바운더리] 출력
                 break;
             }
             }

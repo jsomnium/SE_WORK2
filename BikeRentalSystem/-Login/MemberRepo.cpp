@@ -8,7 +8,7 @@ void MemberRepo::AddNewMember(Member* member)
 bool MemberRepo::IsRealMember(string& id, string& pw)
 {
     for (Member* m : members) {
-        if (m->GetMemberID() == id && m->GetMemberPw() == pw) {
+        if (m->GetID() == id && m->GetPw() == pw) {
             return true;
             // 해당하는 id와 pw가 한 개라도 있다면 true 반환
         }

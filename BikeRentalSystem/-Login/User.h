@@ -12,6 +12,8 @@ protected:
 public:
 	User() : id(""), pw("") {};
 	User(string id, string pw);
+	string GetID();
+	string GetPw();
 };
 
 #endif
