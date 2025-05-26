@@ -3,31 +3,31 @@
 #include "Join.h"
 #include "MemberRepo.h"
 
-void doTask(ifstream& in_fp, ofstream& out_fp)
+void doTask(ifstream &in_fp, ofstream &out_fp)
 {
-    // ±â´ÉÀ» ¼öÇàÇÏ±â À§ÇÑ ÄÁÆ®·Ñ, ¹Ù¿î´õ¸®, ÄÝ·º¼Ç Å¬·¡½º »ý¼º
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½, ï¿½Ù¿ï¿½ï¿½ï¿½ï¿½, ï¿½Ý·ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     MemberRepo memberRepo;
-    User currentUser; // ÇöÀç ·Î±×ÀÎÇÑ À¯Àú Á¤º¸ ÀúÀå
+    User currentUser; // ï¿½ï¿½ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-    // ¸Þ´º ÆÄ½ÌÀ» À§ÇÑ level ±¸ºÐÀ» À§ÇÑ º¯¼ö
+    // ï¿½Þ´ï¿½ ï¿½Ä½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ level ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     int menu_level_1 = 0, menu_level_2 = 0;
     int is_program_exit = 0;
 
     while (!is_program_exit)
     {
-        // ÀÔ·ÂÆÄÀÏ¿¡¼­ ¸Þ´º ¼ýÀÚ 2°³¸¦ ÀÐ±â
+        // ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½ï¿½ï¿½ ï¿½Ð±ï¿½
         in_fp >> menu_level_1 >> menu_level_2;
 
-        // ¸Þ´º ±¸ºÐ ¹× ÇØ´ç ¿¬»ê ¼öÇà
+        // ï¿½Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         switch (menu_level_1)
         {
         case 1:
         {
             switch (menu_level_2)
             {
-            case 1: // "1.1. È¸¿ø°¡ÀÔ" ¸Þ´º ºÎºÐ
+            case 1: // "1.1. È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" ï¿½Þ´ï¿½ ï¿½Îºï¿½
             {
-                // ÇØ´ç ±â´É ¼öÇà
+                // ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 Join JoinControl(&memberRepo);
                 JoinUI JoinUI(&JoinControl);
                 JoinUI.StartJoinInterface(&memberRepo, in_fp, out_fp);
@@ -40,7 +40,7 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
         {
             switch (menu_level_2)
             {
-            case 1: // "2.1 ·Î±×ÀÎ" ¸Þ´º ºÎºÐ
+            case 1: // "2.1 ï¿½Î±ï¿½ï¿½ï¿½" ï¿½Þ´ï¿½ ï¿½Îºï¿½
             {
                 break;
             }
@@ -51,12 +51,13 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
         {
             switch (menu_level_2)
             {
-            case 1:   // "6.1. Á¾·á" ¸Þ´º ºÎºÐ
-                // ÀÌ ºÎºÐ ¶ÇÇÑ use_case·Î °£ÁÖÇØ¼­ ±¸ÇöÇÑ´Ù.
+            case 1: // "6.1. ï¿½ï¿½ï¿½ï¿½" ï¿½Þ´ï¿½ ï¿½Îºï¿½
+                    // ï¿½ï¿½ ï¿½Îºï¿½ ï¿½ï¿½ï¿½ï¿½ use_caseï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
             {
-                out_fp << "6.1. Á¾·á" << endl;
+                out_fp << "6.1. ï¿½ï¿½ï¿½ï¿½" << endl;
                 is_program_exit = 1;
-                break;;
+                break;
+                ;
             }
             }
             break;
