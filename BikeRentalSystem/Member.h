@@ -16,6 +16,7 @@ public:
 	Member(string id, string pw, string phoneNum); // 생성자 정의
 
 	void RentBike(Bike& bike);
+	RentalCollection GetRentalCollection();
 };
 
 #endif

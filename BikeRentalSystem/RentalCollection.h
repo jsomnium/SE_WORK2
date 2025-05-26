@@ -9,6 +9,7 @@ private:
 	vector<Bike*> RentedBikes;
 public:
 	void RentBike(Bike& bike);
+	vector<Bike*>& GetAllRentedBikes();
 };
 
 #endif

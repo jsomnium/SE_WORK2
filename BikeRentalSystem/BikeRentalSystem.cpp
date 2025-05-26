@@ -12,6 +12,8 @@
 #include "Rent.h"
 #include "RentUI.h"
 #include "Admin.h"
+#include "RentalInfo.h"
+#include "RentalInfoUI.h"
 
 void doTask(ifstream& in_fp, ofstream& out_fp)
 {
@@ -139,7 +141,6 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
                 Rent RentControl;
                 RentUI RentUI(&RentControl);
                 string id, name;
-                //Bike bike;
 
                 // [바운더리] 입력받기
                 RentUI.InputRentInfo(id, in_fp);
@@ -163,12 +164,15 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
             case 1:   // "5.1. 자전거 대여 리스트" 메뉴 부분
             {
                 // 필요한 클래스 생성
+                RentalInfo RentalInfoControl;
+                RentalInfoUI RentalInfoUI(&RentalInfoControl);
+                vector<Bike*> bikes;
+
+                // [컨트롤] 자전거 가져오기
+                bikes = RentalInfoControl.GetRentedBikes(currentUser);
 
                 // [바운더리]
-
-                // [컨트롤]
-
-                // [바운더리]
+                RentalInfoUI.OutputRentedBikeList(bikes, out_fp);
 
                 // 수행 종료
                 break;;
