@@ -1,13 +1,15 @@
-#include "RentUI.h"
+ï»¿#include "RentUI.h"
 
+// ìì „ê±° ëŒ€ì—¬ ì…ë ¥ ë¡œì§
 void RentUI::InputRentInfo(string& id, ifstream& in_fp)
 {
 	in_fp >> id;
 }
 
+// ìì „ê±° ëŒ€ì—¬ ì¶œë ¥ ë¡œì§
 void RentUI::OutputRentInfo(string& id, string& name, ofstream& out_fp)
 {
-	out_fp << "4.1. ÀÚÀü°Å ´ë¿©" << endl;
+	out_fp << "4.1. ìì „ê±° ëŒ€ì—¬" << endl;
 	out_fp << "> " << id << " " << name << endl << endl;
-	// °¡Àå ÃÖ±Ù¿¡ ´ë¿©ÇÑ ÀÚÀü°ÅÀÇ Á¤º¸
+	// ê°€ì¥ ìµœê·¼ì— ëŒ€ì—¬í•œ ìì „ê±°ì˜ ì •ë³´
 }

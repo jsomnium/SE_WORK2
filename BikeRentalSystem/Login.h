@@ -1,15 +1,16 @@
-#ifndef LOGIN_H
+ï»¿#ifndef LOGIN_H
 #define LOGIN_H
 
-// Çì´õ ¼±¾ğ
+// í—¤ë” ì„ ì–¸
 #include "BikeRentalSystem.h"
 #include "MemberRepo.h"
 
+// ë¡œê·¸ì¸ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤
 class Login {
 private:
 	MemberRepo* memberRepo;
 public:
-	Login(MemberRepo* memberRepo) : memberRepo(memberRepo) {}; // »ı¼ºÀÚ
+	Login(MemberRepo* memberRepo) : memberRepo(memberRepo) {}; // ìƒì„±ì
 	void LoginSystem(string& id, string& pw, User& curretUser);
 };
 

@@ -1,21 +1,17 @@
-#ifndef JOIN_H
+ï»¿#ifndef JOIN_H
 #define JOIN_H
 
-// Çì´õ ¼±¾ğ
+// í—¤ë” ì„ ì–¸
 #include "BikeRentalSystem.h"
 #include "memberRepo.h"
 #include "Member.h"
 
-// ÇÔ¼ö ¼±¾ğ
-// º¯¼ö ¼±¾ğ
-// Å¬·¡½º ¼±¾ğ
-
-// 1.1 È¸¿ø°¡ÀÔ ±â´É
+// íšŒì›ê°€ì… ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤
 class Join {
 private:
 	MemberRepo* memberRepo;
 public:
-	Join(MemberRepo* memberRepo) : memberRepo(memberRepo) {};
+	Join(MemberRepo* memberRepo) : memberRepo(memberRepo) {}; // ìƒì„±ì
 	void AddNewMember(string id, string pw, string phoneNum);
 };
 

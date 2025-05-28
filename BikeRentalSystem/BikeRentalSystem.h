@@ -1,20 +1,20 @@
-#ifndef BIKERENTALSYSTEM_H
+ï»¿#ifndef BIKERENTALSYSTEM_H
 #define BIKERENTALSYSTEM_H
 
-// Çì´õ ¼±¾ğ
+// í—¤ë” ì„ ì–¸
 #include <stdio.h>
 #include <string.h>
 #include <iostream>
 #include <fstream>
 
-// »ó¼ö ¼±¾ğ
+// ìƒìˆ˜ ì„ ì–¸
 #define MAX_STRING 32
 #define INPUT_FILE_NAME "input.txt"
 #define OUTPUT_FILE_NAME "output.txt"
 
 using namespace std;
 
-// ÇÔ¼ö ¼±¾ğ
+// í•¨ìˆ˜ ì„ ì–¸
 void doTask(ifstream& in_fp, ofstream& out_fp);
 
 #endif

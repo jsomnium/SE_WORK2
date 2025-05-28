@@ -1,7 +1,8 @@
-#ifndef BIKE_H
+ï»¿#ifndef BIKE_H
 #define BIKE_H
 #include "BikeRentalSystem.h"
 
+// ìì „ê±° ì •ì˜
 class Bike
 {
 private:
@@ -9,11 +10,11 @@ private:
 	string name;
 
 public:
-	Bike(string id, string name) : id(id), name(name) {}; // »ı¼ºÀÚ
-	Bike() : id(""), name("") {}; // ±âº» »ı¼ºÀÚ
+	Bike(string id, string name) : id(id), name(name) {}; // ìƒì„±ì
+	Bike() : id(""), name("") {}; // ê¸°ë³¸ ìƒì„±ì
 
-	string GetId();
-	string GetName();
+	string GetId(); // id ë°˜í™˜
+	string GetName(); // name ë°˜í™˜
 };
 
 #endif

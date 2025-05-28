@@ -1,14 +1,16 @@
-#include "Member.h"
+ï»¿#include "Member.h"
 #include "User.h"
 
-// Member »ı¼ºÀÚ Á¤ÀÇ
+// Member ìƒì„±ì ì •ì˜
 Member::Member(string id, string pw, string phoneNum): User(id, pw), phoneNum(phoneNum) {}
 
+// Collcetionì— ìì „ê±° ë“±ë¡
 void Member::RentBike(Bike& bike)
 {
 	rentalCollection.RentBike(bike);
 }
 
+// í•´ë‹¹ Collection ë°˜í™˜
 RentalCollection Member::GetRentalCollection()
 {
 	return rentalCollection;

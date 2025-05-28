@@ -1,13 +1,14 @@
-#ifndef LOGINUIUI_H
+ï»¿#ifndef LOGINUIUI_H
 #define LOGINUIUI_H
 #include "Logout.h"
 
+// ë¡œê·¸ì•„ì›ƒ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤
 class LogoutUI 
 {
 private:
 	Logout* logoutControl;
 public:
-	LogoutUI(Logout* logoutControl) : logoutControl(logoutControl) {}; // »ı¼ºÀÚ Á¤ÀÇ
-	void OutputLogoutResult(string& id, ofstream& out_fp);
+	LogoutUI(Logout* logoutControl) : logoutControl(logoutControl) {}; // ìƒì„±ì ì •ì˜
+	void OutputLogoutResult(string& id, ofstream& out_fp); // ì¶œë ¥
 };
 #endif

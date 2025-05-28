@@ -1,11 +1,12 @@
-#include "BikeRepo.h"
+﻿#include "BikeRepo.h"
 
-// bikeRepo�� �� �ֱ�
+// bikeRepo의 배열에 자전거 넣기
 void BikeRepo::EnrollNewBike(Bike* bike)
 {
 	bikes.push_back(bike);
 }
 
+// bikeRepo에서 실제 Bike 찾기
 Bike* BikeRepo::FindBike(string& id)
 {
 	for (auto& bike : bikes) {

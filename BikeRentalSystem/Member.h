@@ -1,22 +1,22 @@
-#ifndef MEMBER_H
+ï»¿#ifndef MEMBER_H
 #define MEMBER_H
 
-// Çì´õ ¼±¾ğ
+// í—¤ë” ì„ ì–¸
 #include "BikeRentalSystem.h"
 #include "User.h"
 #include "RentalCollection.h"
 
-// User¸¦ »ó¼ÓÇÏ´Â Member Á¤ÀÇ
+// Userë¥¼ ìƒì†í•˜ëŠ” Member í´ë˜ìŠ¤
 class Member : public User {
 private:
 	string phoneNum;
-	RentalCollection rentalCollection; // has-a °ü°è
+	RentalCollection rentalCollection;
 public:
-	Member() : User("", ""), phoneNum("") {}; // ±âº» »ı¼ºÀÚ
-	Member(string id, string pw, string phoneNum); // »ı¼ºÀÚ Á¤ÀÇ
+	Member() : User("", ""), phoneNum("") {}; // ê¸°ë³¸ ìƒì„±ì
+	Member(string id, string pw, string phoneNum); // ìƒì„±ì ì •ì˜
 
 	void RentBike(Bike& bike);
-	RentalCollection GetRentalCollection();
+	RentalCollection GetRentalCollection(); // ìì‹ ì˜ rentalCollection ë°˜í™˜
 };
 
 #endif

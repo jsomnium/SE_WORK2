@@ -1,12 +1,13 @@
-#include "Logout.h"
+ï»¿#include "Logout.h"
 #include "User.h"
 
-// ·Î±×¾Æ¿ô ·ÎÁ÷
+// ë¡œê·¸ì•„ì›ƒ ë¡œì§
 void Logout::LogoutSystem(User currentUser)
 {
-	currentUser = User(); // ±âº» »ı¼ºÀÚ·Î ¸®¼Â
+	currentUser = User(); // ê¸°ë³¸ ìƒì„±ìë¡œ ë¦¬ì…‹
 }
 
+// id ë°˜í™˜
 string Logout::GetCurUserId(User currentUser)
 {
 	return currentUser.GetID();

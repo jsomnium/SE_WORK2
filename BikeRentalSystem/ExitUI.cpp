@@ -1,6 +1,7 @@
-#include "ExitUI.h"
+ï»¿#include "ExitUI.h"
 
+// ì¢…ë£Œ ì¶œë ¥
 void ExitUI::OutputExit(ofstream& out_fp)
 {
-	out_fp << "6.1. Á¾·á" << endl;
+	out_fp << "6.1. ì¢…ë£Œ" << endl;
 }

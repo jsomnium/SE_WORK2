@@ -1,9 +1,9 @@
-#include "BikeRentalSystem.h"
+ï»¿#include "BikeRentalSystem.h"
 #include "Join.h"
 #include "MemberRepo.h"
 
-// 1.1 È¸¿ø°¡ÀÔ - (1.2). AddNewMember()
+// íšŒì›ê°€ì… ì‹œ memberRepoì— ìƒˆë¡œìš´ ë©¤ë²„ ë“±ë¡í•˜ê¸°
 void Join::AddNewMember(string id, string pw, string phoneNum) {
-	Member* member = new Member(id, pw, phoneNum); // ÀÔ·Â¹ŞÀº °ªÀ» ±â¹İÀ¸·Î ¸â¹ö »ı¼º
-	this->memberRepo->AddNewMember(member); // »ı¼ºµÈ member¸¦ memberRepo¿¡ Ãß°¡ÇÔ
+	Member* member = new Member(id, pw, phoneNum); // ì…ë ¥ë°›ì€ ê°’ì„ ê¸°ë°˜ìœ¼ë¡œ ë©¤ë²„ ìƒì„±
+	this->memberRepo->AddNewMember(member); // ìƒì„±ëœ memberë¥¼ memberRepoì— ì¶”ê°€í•¨
 }

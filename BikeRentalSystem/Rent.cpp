@@ -1,15 +1,15 @@
-#include "Rent.h"
+ï»¿#include "Rent.h"
 #include "Member.h"
 #include "BikeRepo.h"
 #include "Bike.h"
 
-// ÀÚÀü°Å ´ë¿© ÇÔ¼ö
+// ìì „ê±° ëŒ€ì—¬ í•¨ìˆ˜
 void Rent::RentBike(string& id, string& name, Member& currentUser, BikeRepo& bikeRepo)
 {
-	// id¸¦ ±â¹İÀ¸·Î ·¹Æ÷¿¡¼­ ÀÚÀü°Å¸¦ °¡Á®¿È
+	// idë¥¼ ê¸°ë°˜ìœ¼ë¡œ ë ˆí¬ì—ì„œ ìì „ê±°ë¥¼ ê°€ì ¸ì˜´
 	Bike* bike = bikeRepo.FindBike(id);
 	name = bike->GetName();
 
-	// ÀÚÀü°Å ´ë¿©
+	// ìì „ê±° ëŒ€ì—¬
 	currentUser.RentBike(*bike);
 }

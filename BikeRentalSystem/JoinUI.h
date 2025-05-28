@@ -1,19 +1,19 @@
-#ifndef JOINUI_H
+ï»¿#ifndef JOINUI_H
 #define JOINUI_H
 
-// Çì´õ ¼±¾ğ
+// í—¤ë” ì„ ì–¸
 #include "BikeRentalSystem.h"
 #include "Join.h"
 #include "MemberRepo.h"
 
-// ÇÔ¼ö ¼±¾ğ
+// íšŒì›ê°€ì… ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤
 class JoinUI {
 private:
 	Join* joinControl;
 public:
-	JoinUI(Join* joinControl) : joinControl(joinControl) {}; // »ı¼ºÀÚ
-	void InputJoinInfo(string& id, string& pw, string& phoneNum, ifstream& in_fp);
-	void OutputJoinResult(string& id, string& pw, string& phoneNum, ofstream& out_fp);
+	JoinUI(Join* joinControl) : joinControl(joinControl) {}; // ìƒì„±ì
+	void InputJoinInfo(string& id, string& pw, string& phoneNum, ifstream& in_fp); // ì…ë ¥
+	void OutputJoinResult(string& id, string& pw, string& phoneNum, ofstream& out_fp); // ì¶œë ¥
 };
 
 #endif

@@ -1,11 +1,12 @@
-#include "RentalInfoUI.h"
+ï»¿#include "RentalInfoUI.h"
 #include "Member.h"
 
+// ëŒ€ì—¬í•œ ìì „ê±° ì¶œë ¥ ë¡œì§
 void RentalInfoUI::OutputRentedBikeList(vector<Bike*> bikes, ofstream& out_fp)
 {
-	out_fp << "5.1. ÀÚÀü°Å ´ë¿© ¸®½ºÆ®" << endl;
+	out_fp << "5.1. ìì „ê±° ëŒ€ì—¬ ë¦¬ìŠ¤íŠ¸" << endl;
 
-	// ¸ğµç ÀÚÀü°Å¿¡ ´ëÇØ¼­ Id¿Í Name Ãâ·Â
+	// ëª¨ë“  ìì „ê±°ì— ëŒ€í•´ì„œ Idì™€ Name ì¶œë ¥
 	for (Bike* bike : bikes) {
 		out_fp << "> " << bike->GetId() << " " << bike->GetName() << endl;
 	}

@@ -1,14 +1,14 @@
-#include "EnrollBikeUI.h"
+ï»¿#include "EnrollBikeUI.h"
 
-// ÀÚÀü°Å µî·Ï Á¤º¸ ÀÔ·Â¹Ş±â
+// ìì „ê±° ë“±ë¡ ì •ë³´ ì…ë ¥ë°›ê¸°
 void EnrollBikeUI::InputEnrollInfo(string& id, string& name, ifstream& in_fp)
 {
 	in_fp >> id >> name;
 }
 
-// ÀÚÀü°Å µî·Ï Á¤º¸ Ãâ·ÂÇÏ±â
+// ìì „ê±° ë“±ë¡ ì •ë³´ ì¶œë ¥í•˜ê¸°
 void EnrollBikeUI::OutputEnrollInfo(string& id, string& name, ofstream& out_fp)
 {
-	out_fp << "3.1. ÀÚÀü°Å µî·Ï" << endl;
+	out_fp << "3.1. ìì „ê±° ë“±ë¡" << endl;
 	out_fp << "> " << id << " " << name << " " << endl << endl;
 }

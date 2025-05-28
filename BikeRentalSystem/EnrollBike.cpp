@@ -1,9 +1,10 @@
-#include "EnrollBike.h"
+ï»¿#include "EnrollBike.h"
 #include "BikeRentalSystem.h"
 #include "Bike.h"
 
+// ìì „ê±° ë“±ë¡í•˜ê¸°
 void EnrollBike::EnrollNewBike(string& id, string& name)
 {
-	Bike* bike = new Bike(id, name); // ÀÔ·Â¹ŞÀº °ªÀ» ±â¹İÀ¸·Î ÀÚÀü°Å »ı¼º
-	this->bikeRepo->EnrollNewBike(bike); // »ı¼ºµÈ bike¸¦ bikeRepo¿¡ Ãß°¡ÇÔ
+	Bike* bike = new Bike(id, name); // ì…ë ¥ë°›ì€ ê°’ì„ ê¸°ë°˜ìœ¼ë¡œ ìì „ê±° ìƒì„±
+	this->bikeRepo->EnrollNewBike(bike); // ìƒì„±ëœ bikeë¥¼ bikeRepoì— ì¶”ê°€í•¨
 }

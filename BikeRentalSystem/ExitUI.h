@@ -1,19 +1,17 @@
-#ifndef EXITUI_H
+ï»¿#ifndef EXITUI_H
 #define EXITUI_H
 
-// Çì´õ ¼±¾ğ
+// í—¤ë” ì„ ì–¸
 #include "BikeRentalSystem.h"
 #include "Exit.h"
 
-// ÇÔ¼ö ¼±¾ğ
-
-// Á¾·á ±â´É ÄÁÆ®·Ñ Å¬·¡½º
+// ì¢…ë£Œ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤
 class ExitUI {
 private:
 	Exit* exitControl;
 public:
-	ExitUI(Exit* exitControl) : exitControl(exitControl) {}; // »ı¼ºÀÚ
-	void OutputExit(ofstream& out_fp);
+	ExitUI(Exit* exitControl) : exitControl(exitControl) {}; // ìƒì„±ì
+	void OutputExit(ofstream& out_fp); // ì¢…ë£Œ ì¶œë ¥
 };
 
 #endif

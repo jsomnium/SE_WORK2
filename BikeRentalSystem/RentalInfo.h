@@ -1,11 +1,11 @@
-#ifndef RENTALINFO_H
+ï»¿#ifndef RENTALINFO_H
 #define RENTALINFO_H
 
 #include "Bike.h"
 #include "Member.h"
 #include <vector>
 
-// ÀÚÀü°Å ´ë¿© Á¤º¸ Á¶È¸ ÄÁÆ®·Ñ Å¬·¡½º
+// ìì „ê±° ëŒ€ì—¬ ì •ë³´ ì¡°íšŒ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤
 class RentalInfo
 {
 public:

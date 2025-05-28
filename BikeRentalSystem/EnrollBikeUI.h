@@ -1,18 +1,18 @@
-#ifndef ENROLLBIKEUI_H
+ï»¿#ifndef ENROLLBIKEUI_H
 #define ENROLLBIKEUI_H
 
-// Çì´õ ¼±¾ğ
+// í—¤ë” ì„ ì–¸
 #include "EnrollBike.h"
 #include "BikeRentalSystem.h"
 
-// ÀÚÀü°Å µî·Ï ¹Ù¿î´õ¸® Å¬·¡½º
+// ìì „ê±° ë“±ë¡ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤
 class EnrollBikeUI
 {
 private:
-	EnrollBike* EnrollBikeControl;
+	EnrollBike* enrollBikeControl;
 
 public:
-	EnrollBikeUI(EnrollBike* EnrollBikeControl) : EnrollBikeControl(EnrollBikeControl) {}; // »ı¼ºÀÚ
+	EnrollBikeUI(EnrollBike* enrollBikeControl) : enrollBikeControl(enrollBikeControl) {}; // ìƒì„±ì
 	void InputEnrollInfo(string& id, string& name, ifstream& in_fp);
 	void OutputEnrollInfo(string& id, string& name, ofstream& out_fp);
 };

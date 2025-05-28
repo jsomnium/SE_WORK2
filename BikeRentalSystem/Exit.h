@@ -1,14 +1,13 @@
-#ifndef EXIT_H
+ï»¿#ifndef EXIT_H
 #define EXIT_H
 
-// Çì´õ ¼±¾ğ
+// í—¤ë” ì„ ì–¸
 #include "BikeRentalSystem.h"
 #include "memberRepo.h"
 #include "Member.h"
 
-// ÇÔ¼ö ¼±¾ğ
 
-// Á¾·á ±â´É ÄÁÆ®·Ñ Å¬·¡½º
+// ì¢…ë£Œ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤
 class Exit {
 public:
 	void ExitSystem(int& is_program_exit);

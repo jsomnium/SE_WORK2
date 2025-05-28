@@ -1,18 +1,18 @@
-#include "Login.h"
+ï»¿#include "Login.h"
 
 void Login::LoginSystem(string& id, string& pw, User& currentUser)
 {
-	// °ü¸®ÀÚ °èÁ¤ È®ÀÎ
+	// ê´€ë¦¬ì ê³„ì • í™•ì¸
 	if (id == "admin" && pw == "admin")
 	{
 		currentUser = User(id, pw);
 		return;
 	}
 
-	// ¸â¹ö °èÁ¤ È®ÀÎ
+	// ë©¤ë²„ ê³„ì • í™•ì¸
 	if (memberRepo->IsRealMember(id, pw))
 	{
 		currentUser = User(id, pw);
-		// ·Î±×ÀÎ Á¤º¸ ÀúÀå
+		// ë¡œê·¸ì¸ ì •ë³´ ì €ì¥
 	}
 }

@@ -1,4 +1,4 @@
-#include "BikeRentalSystem.h"
+ï»¿#include "BikeRentalSystem.h"
 #include "JoinUI.h"
 #include "Join.h"
 #include "MemberRepo.h"
@@ -19,41 +19,41 @@
 
 void doTask(ifstream& in_fp, ofstream& out_fp)
 {
-    // ±â´ÉÀ» ¼öÇàÇÏ±â À§ÇØ ÇÊ¿äÇÑ Å¬·¡½º »ı¼º
-    MemberRepo memberRepo;// ¸ğµç ¸â¹ö Á¤º¸ ÀúÀå
-    Member currentUser; // ÇöÀç ·Î±×ÀÎÇÑ ¸â¹ö Á¤º¸ ÀúÀå
-    BikeRepo bikeRepo; // ¸ğµç ÀÚÀü°Å Á¤º¸ ÀúÀå
+    // ê¸°ëŠ¥ì„ ìˆ˜í–‰í•˜ê¸° ìœ„í•´ í•„ìš”í•œ í´ë˜ìŠ¤ ìƒì„±
+    MemberRepo memberRepo;// ëª¨ë“  ë©¤ë²„ ì •ë³´ ì €ì¥
+    Member currentUser; // í˜„ì¬ ë¡œê·¸ì¸í•œ ë©¤ë²„ ì •ë³´ ì €ì¥
+    BikeRepo bikeRepo; // ëª¨ë“  ìì „ê±° ì •ë³´ ì €ì¥
 
-    // ¸Ş´º ÆÄ½ÌÀ» À§ÇÑ level ±¸ºĞÀ» À§ÇÑ º¯¼ö
+    // ë©”ë‰´ íŒŒì‹±ì„ ìœ„í•œ level êµ¬ë¶„ì„ ìœ„í•œ ë³€ìˆ˜
     int menu_level_1 = 0, menu_level_2 = 0;
     int is_program_exit = 0;
 
     while (!is_program_exit)
     {
-        // ÀÔ·ÂÆÄÀÏ¿¡¼­ ¸Ş´º ¼ıÀÚ 2°³¸¦ ÀĞ±â
+        // ì…ë ¥íŒŒì¼ì—ì„œ ë©”ë‰´ ìˆ«ì 2ê°œë¥¼ ì½ê¸°
         in_fp >> menu_level_1 >> menu_level_2;
 
-        // ¸Ş´º ±¸ºĞ ¹× ÇØ´ç ¿¬»ê ¼öÇà
+        // ë©”ë‰´ êµ¬ë¶„ ë° í•´ë‹¹ ì—°ì‚° ìˆ˜í–‰
         switch (menu_level_1)
         {
         case 1:
         {
             switch (menu_level_2)
             {
-            case 1: // "1.1. È¸¿ø°¡ÀÔ" ¸Ş´º ºÎºĞ
+            case 1: // "1.1. íšŒì›ê°€ì…" ë©”ë‰´ ë¶€ë¶„
             {
-                // ÇÊ¿äÇÑ Å¬·¡½º »ı¼º
+                // í•„ìš”í•œ í´ë˜ìŠ¤ ìƒì„±
                 Join JoinControl(&memberRepo);
                 JoinUI JoinUI(&JoinControl);
                 string id, pw, phone;
 
-                // [¹Ù¿î´õ¸®] ÀÔ·Â¹Ş±â
+                // [ë°”ìš´ë”ë¦¬] ì…ë ¥ë°›ê¸°
                 JoinUI.InputJoinInfo(id, pw, phone, in_fp);
 
-                // [ÄÁÆ®·Ñ] ·ÎÁ÷ ½ÇÇà
+                // [ì»¨íŠ¸ë¡¤] ë¡œì§ ì‹¤í–‰
                 JoinControl.AddNewMember(id, pw, phone);
 
-                // [¹Ù¿î´õ¸®] Ãâ·Â
+                // [ë°”ìš´ë”ë¦¬] ì¶œë ¥
                 JoinUI.OutputJoinResult(id, pw, phone, out_fp);
 
                 break;
@@ -65,38 +65,38 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
         {
             switch (menu_level_2)
             {
-            case 1: // "2.1 ·Î±×ÀÎ" ¸Ş´º ºÎºĞ
+            case 1: // "2.1 ë¡œê·¸ì¸" ë©”ë‰´ ë¶€ë¶„
             {
-                // ÇÊ¿äÇÑ Å¬·¡½º »ı¼º
+                // í•„ìš”í•œ í´ë˜ìŠ¤ ìƒì„±
                 Login LoginControl(&memberRepo);
                 LoginUI LoginUI(&LoginControl);
                 string id, pw, phone;
 
-                // [¹Ù¿î´õ¸®] ÀÔ·Â¹Ş±â
+                // [ë°”ìš´ë”ë¦¬] ì…ë ¥ë°›ê¸°
                 LoginUI.InputLoginInfo(id, pw, in_fp);
 
-                // [ÄÁÆ®·Ñ] ·ÎÁ÷ ½ÇÇà
+                // [ì»¨íŠ¸ë¡¤] ë¡œì§ ì‹¤í–‰
                 LoginControl.LoginSystem(id, pw, currentUser);
 
-                // [¹Ù¿î´õ¸®] Ãâ·Â
+                // [ë°”ìš´ë”ë¦¬] ì¶œë ¥
                 LoginUI.OutputLoginResult(id, pw, out_fp);
 
                 break;
             }
-            case 2: // "2.2 ·Î±×¾Æ¿ô" ¸Ş´º ºÎºĞ
+            case 2: // "2.2 ë¡œê·¸ì•„ì›ƒ" ë©”ë‰´ ë¶€ë¶„
             {
-                // ÇÊ¿äÇÑ Å¬·¡½º »ı¼º
+                // í•„ìš”í•œ í´ë˜ìŠ¤ ìƒì„±
                 Logout LogoutControl;
                 LogoutUI LogoutUI(&LogoutControl);
                 string id;
 
-                // [ÄÁÆ®·Ñ] id °¡Á®¿À±â
+                // [ì»¨íŠ¸ë¡¤] id ê°€ì ¸ì˜¤ê¸°
                 id = LogoutControl.GetCurUserId(currentUser);
 
-                // [ÄÁÆ®·Ñ] ·ÎÁ÷ ½ÇÇà
+                // [ì»¨íŠ¸ë¡¤] ë¡œì§ ì‹¤í–‰
                 LogoutControl.LogoutSystem(currentUser);
 
-                // [¹Ù¿î´õ¸®] Ãâ·Â
+                // [ë°”ìš´ë”ë¦¬] ì¶œë ¥
                 LogoutUI.OutputLogoutResult(id, out_fp);
 
                 break;
@@ -108,20 +108,20 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
         {
             switch (menu_level_2)
             {
-            case 1: // "3.1 ÀÚÀü°Å µî·Ï" ¸Ş´º ºÎºĞ
+            case 1: // "3.1 ìì „ê±° ë“±ë¡" ë©”ë‰´ ë¶€ë¶„
             {
-                // ÇÊ¿äÇÑ Å¬·¡½º »ı¼º
+                // í•„ìš”í•œ í´ë˜ìŠ¤ ìƒì„±
                 EnrollBike EnrollBikeControl(&bikeRepo);
                 EnrollBikeUI EnrollBikeUI(&EnrollBikeControl);
                 string id, name;
 
-                // [¹Ù¿î´õ¸®] ÀÔ·Â¹Ş±â
+                // [ë°”ìš´ë”ë¦¬] ì…ë ¥ë°›ê¸°
                 EnrollBikeUI.InputEnrollInfo(id, name, in_fp);
 
-                // [ÄÁÆ®·Ñ] ·ÎÁ÷ ¼öÇà
+                // [ì»¨íŠ¸ë¡¤] ë¡œì§ ìˆ˜í–‰
                 EnrollBikeControl.EnrollNewBike(id, name);
 
-                // [¹Ù¿î´õ¸®] Ãâ·Â
+                // [ë°”ìš´ë”ë¦¬] ì¶œë ¥
                 EnrollBikeUI.OutputEnrollInfo(id, name, out_fp);
 
                 break;
@@ -133,20 +133,20 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
         {
             switch (menu_level_2)
             {
-            case 1:  // "4.1 ÀÚÀü°Å ´ë¿©" ¸Ş´º ºÎºĞ
+            case 1:  // "4.1 ìì „ê±° ëŒ€ì—¬" ë©”ë‰´ ë¶€ë¶„
             {
-                // ÇÊ¿äÇÑ Å¬·¡½º »ı¼º
+                // í•„ìš”í•œ í´ë˜ìŠ¤ ìƒì„±
                 Rent RentControl;
                 RentUI RentUI(&RentControl);
                 string id, name;
 
-                // [¹Ù¿î´õ¸®] ÀÔ·Â¹Ş±â
+                // [ë°”ìš´ë”ë¦¬] ì…ë ¥ë°›ê¸°
                 RentUI.InputRentInfo(id, in_fp);
 
-                // [ÄÁÆ®·Ñ] ·ÎÁ÷ ¼öÇà
+                // [ì»¨íŠ¸ë¡¤] ë¡œì§ ìˆ˜í–‰
                 RentControl.RentBike(id, name, currentUser, bikeRepo);
 
-                // [¹Ù¿î´õ¸®] Ãâ·Â
+                // [ë°”ìš´ë”ë¦¬] ì¶œë ¥
                 RentUI.OutputRentInfo(id, name, out_fp);
 
                 break;
@@ -158,17 +158,17 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
         {
             switch (menu_level_2)
             {
-            case 1:   // "5.1. ÀÚÀü°Å ´ë¿© ¸®½ºÆ®" ¸Ş´º ºÎºĞ
+            case 1:   // "5.1. ìì „ê±° ëŒ€ì—¬ ë¦¬ìŠ¤íŠ¸" ë©”ë‰´ ë¶€ë¶„
             {
-                // ÇÊ¿äÇÑ Å¬·¡½º »ı¼º
+                // í•„ìš”í•œ í´ë˜ìŠ¤ ìƒì„±
                 RentalInfo RentalInfoControl;
                 RentalInfoUI RentalInfoUI(&RentalInfoControl);
                 vector<Bike*> bikes;
 
-                // [ÄÁÆ®·Ñ] ÀÚÀü°Å °¡Á®¿À±â
+                // [ì»¨íŠ¸ë¡¤] ìì „ê±° ê°€ì ¸ì˜¤ê¸°
                 bikes = RentalInfoControl.GetRentedBikes(currentUser);
 
-                // [¹Ù¿î´õ¸®] Ãâ·Â
+                // [ë°”ìš´ë”ë¦¬] ì¶œë ¥
                 RentalInfoUI.OutputRentedBikeList(bikes, out_fp);
 
                 break;;
@@ -180,16 +180,16 @@ void doTask(ifstream& in_fp, ofstream& out_fp)
         {
             switch (menu_level_2)
             {
-            case 1:   // "6.1. Á¾·á" ¸Ş´º ºÎºĞ
+            case 1:   // "6.1. ì¢…ë£Œ" ë©”ë‰´ ë¶€ë¶„
             {
-                // ÇÊ¿äÇÑ Å¬·¡½º »ı¼º
+                // í•„ìš”í•œ í´ë˜ìŠ¤ ìƒì„±
                 Exit ExitControl;
                 ExitUI ExitUI(&ExitControl);
                 
-                // [ÄÁÆ®·Ñ] ·ÎÁ÷ ¼öÇà
+                // [ì»¨íŠ¸ë¡¤] ë¡œì§ ìˆ˜í–‰
                 ExitControl.ExitSystem(is_program_exit);
 
-                // [¹Ù¿î´õ¸®] Ãâ·Â
+                // [ë°”ìš´ë”ë¦¬] ì¶œë ¥
                 ExitUI.OutputExit(out_fp);
 
                 break;;

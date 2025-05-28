@@ -1,15 +1,15 @@
-#ifndef LOGINUI_H
+ï»¿#ifndef LOGINUI_H
 #define LOGINUI_H
 
-// Çì´õ ¼±¾ğ
+// í—¤ë” ì„ ì–¸
 #include "Login.h"
 
-// ·Î±×ÀÎ ¹Ù¿î´õ¸® Å¬·¡½º
+// ë¡œê·¸ì¸ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤
 class LoginUI {
 private:
 	Login* loginControl;
 public:
-	LoginUI(Login* loginControl) : loginControl(loginControl) {}; // »ı¼ºÀÚ
+	LoginUI(Login* loginControl) : loginControl(loginControl) {}; // ìƒì„±ì
 	void InputLoginInfo(string& id, string& pw, ifstream& in_fp);
 	void OutputLoginResult(string& id, string& pw, ofstream& out_fp);
 };

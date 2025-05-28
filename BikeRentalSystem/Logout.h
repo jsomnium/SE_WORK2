@@ -1,11 +1,11 @@
-#ifndef LOGOUT_H
+ï»¿#ifndef LOGOUT_H
 #define LOGOUT_H
 
-// Çì´õ ¼±¾ğ
+// í—¤ë” ì„ ì–¸
 #include "BikeRentalSystem.h"
 #include "User.h"
 
-// ·Î±×¾Æ¿ô ÄÁÆ®·Ñ Á¤ÀÇ
+// ë¡œê·¸ì•„ì›ƒ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤
 class Logout {
 public:
 	void LogoutSystem(User currentUser);

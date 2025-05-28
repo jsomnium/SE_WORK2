@@ -1,15 +1,15 @@
-#ifndef RENT_H
+ï»¿#ifndef RENT_H
 #define RENT_H
 
-// Çì´õ ¼±¾ğ
+// í—¤ë” ì„ ì–¸
 #include "Member.h"
 #include "BikeRepo.h"
 
-// ÀÚÀü°Å ´ë¿© ÄÁÆ®·Ñ Å¬·¡½º
+// ìì „ê±° ëŒ€ì—¬ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤
 class Rent 
 {
 public:
-	Rent() {};
+	Rent() {}; // ìƒì„±ì
 	void RentBike(string& id, string& name, Member& currentUser, BikeRepo& bikeRepo);
 
 };

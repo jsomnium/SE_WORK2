@@ -1,15 +1,15 @@
-#include "BikeRentalSystem.h"
+ï»¿#include "BikeRentalSystem.h"
 #include "MemberRepo.h"
 #include "JoinUI.h"
 #include "Join.h"
 
-// ÀÔ·Â¹Ş´Â ·ÎÁ÷
+// ì…ë ¥ë°›ëŠ” ë¡œì§
 void JoinUI::InputJoinInfo(string& id, string& pw, string& phoneNum, ifstream& in_fp) {
     in_fp >> id >> pw >> phoneNum;
 }
 
-// Ãâ·ÂÇÏ´Â ·ÎÁ÷
+// ì¶œë ¥í•˜ëŠ” ë¡œì§
 void JoinUI::OutputJoinResult(string& id, string& pw, string& phoneNum, ofstream& out_fp) {
-    out_fp << "1.1. È¸¿ø°¡ÀÔ" << endl;
+    out_fp << "1.1. íšŒì›ê°€ì…" << endl;
     out_fp << "> " << id << " " << pw << " " << phoneNum << endl << endl;
 }
